@@ -6,7 +6,7 @@ import {
   url
 } from '@angular-devkit/schematics'
 
-export function license(options: any): Rule {
+export default function (options: any): Rule {
   const now = new Date()
   const year = now.getFullYear()
   const author = 'Bram Borggreve (https://github.com/beeman)'

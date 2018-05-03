@@ -3,11 +3,11 @@
   "schematics": {
     "license": {
       "description": "MIT License",
-      "factory": "./license/index#license"
+      "factory": "./license"
     },
     "prettier": {
       "description": "My custom prettier config",
-      "factory": "./prettier/index#prettier"
+      "factory": "./prettier"
     }
   }
 }

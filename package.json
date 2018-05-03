@@ -15,7 +15,7 @@
     "schematics"
   ],
   "private": false,
-  "author": "",
+  "author": "Bram Borggreve <borggreve@gmail.com>",
   "license": "MIT",
   "schematics": "./src/collection.json",
   "dependencies": {
