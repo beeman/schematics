@@ -14,6 +14,7 @@
   "keywords": [
     "schematics"
   ],
+  "private": false,
   "author": "",
   "license": "MIT",
   "schematics": "./src/collection.json",
