@@ -10,7 +10,7 @@ import {
 // per file.
 export function prettier(options: any): Rule {
   const templateSource = apply(url("./files"), [
-    template({ ...options, message: "ng-conf" })
+    template({ ...options })
   ]);
 
   return mergeWith(templateSource);

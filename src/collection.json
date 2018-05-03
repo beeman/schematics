@@ -1,6 +1,10 @@
 {
   "$schema": "../node_modules/@angular-devkit/schematics/collection-schema.json",
   "schematics": {
+    "license": {
+      "description": "MIT License",
+      "factory": "./license/index#license"
+    },
     "prettier": {
       "description": "My custom prettier config",
       "factory": "./prettier/index#prettier"

@@ -10,10 +10,20 @@ npm install @beeman/schematics
 
 ## Schematics
 
-Generate custom prettierrc
+### license
+
+Generate custom LICENSE file.
 
 ```
-ng generate @beeman/schematics:prettier
+schematics @beeman/schematics:license
+```
+
+### prettier
+
+Generate custom prettierrc.
+
+```
+schematics @beeman/schematics:prettier
 ```
 
 ### Testing
