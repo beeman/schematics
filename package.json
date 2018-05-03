@@ -1,11 +1,15 @@
 {
   "name": "@beeman/schematics",
-  "version": "0.0.0",
+  "version": "0.0.0-development",
   "description": "Custom schematics from beeman",
   "scripts": {
-    "dev": "npm run build -- -w",
+    "dev": "npx concurrently 'npm run build:watch' 'npm run test:watch' ",
     "build": "tsc -p tsconfig.json",
-    "test": "npm run build && jasmine **/*_spec.js"
+    "build:watch": "npm run build -- -w --preserveWatchOutput",
+    "pretest": "npm run build",
+    "test": "jasmine src/**/*_spec.js",
+    "test:watch": "nodemon ./node_modules/.bin/jasmine src/**/*_spec.js",
+    "semantic-release": "semantic-release"
   },
   "keywords": [
     "schematics"
@@ -16,9 +20,18 @@
   "dependencies": {
     "@angular-devkit/core": "^0.5.13",
     "@angular-devkit/schematics": "^0.5.13",
-    "@types/jasmine": "^2.6.0",
+    "@types/jasmine": "^2.8.6",
     "@types/node": "^8.0.31",
     "jasmine": "^2.8.0",
+    "jasmine-node": "^1.14.5",
     "typescript": "^2.5.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/beeman/schematics.git"
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.1",
+    "semantic-release": "^15.2.0"
   }
 }
