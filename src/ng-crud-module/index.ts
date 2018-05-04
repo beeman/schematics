@@ -7,18 +7,14 @@ import {
   Tree,
 } from '@angular-devkit/schematics'
 
-const recipe = (options: any) => {
+const createRecipe = (options: any) => {
   const name = options.name || 'crud'
   const collection = '@schematics/angular'
-  const spec = false
+  const spec = true
   const inlineStyle = true
   const inlineTemplate = true
 
   return {
-    dependencies: [
-      { package: 'bootstrap', version: '4.1.1' },
-      { package: 'font-awesome', version: '4.7.0' },
-    ],
     externalSchematics: [
       {
         collection,
@@ -64,13 +60,13 @@ const recipe = (options: any) => {
 }
 
 export default function(options: any): Rule {
-  const currentRecipe = recipe(options)
+  const recipe = createRecipe(options)
 
   return (tree: Tree, context: SchematicContext) => {
     return chain([
       branchAndMerge(
         chain([
-          ...currentRecipe.externalSchematics.map(es => {
+          ...recipe.externalSchematics.map(es => {
             return externalSchematic(
               es.collection,
               es.schematicName,
