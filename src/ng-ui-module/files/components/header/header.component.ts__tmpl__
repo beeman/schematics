@@ -1,0 +1,34 @@
+import { Component } from '@angular/core'
+
+@Component({
+  selector: 'app-header',
+  template: `
+    <nav class="navbar navbar-dark bg-dark mb-5">
+      <a class="navbar-brand" [href]="titleLink">{{ title }}</a>
+      <div class="navbar-expand mr-auto">
+        <div class="navbar-nav">
+          <a *ngFor="let link of links" class="nav-item nav-link"
+             routerLinkActive="active"
+             [routerLink]="link.link">{{link.label}}</a>
+        </div>
+      </div>
+      <div class="navbar-expand ml-auto navbar-nav">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link" href="https://github.com/beeman" target="_blank">
+            <i class="fa fa-github"></i>
+          </a>
+        </div>
+      </div>
+    </nav>
+  `,
+})
+export class HeaderComponent {
+  public title = 'Header'
+  public titleLink = '/'
+  public links = [
+    {
+      label: 'Home',
+      link: '/home',
+    },
+  ]
+}

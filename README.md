@@ -8,7 +8,7 @@ Custom schematics from beeman.
 npm install @beeman/schematics
 ```
 
-## Schematics
+## Generic Schematics
 
 ### license
 
@@ -25,6 +25,25 @@ Generate custom prettierrc.
 ```
 schematics @beeman/schematics:prettier
 ```
+
+## Angular Schematics
+
+### license
+
+Generate a Crud Module
+
+```
+ng generate @beeman/schematics:ng-crud-module
+```
+
+### prettier
+
+Generate a UiModule
+
+```
+ng generate @beeman/schematics:ng-ui-module
+```
+
 
 ### Testing
 

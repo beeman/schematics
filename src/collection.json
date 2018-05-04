@@ -1,9 +1,24 @@
 {
   "$schema": "../node_modules/@angular-devkit/schematics/collection-schema.json",
   "schematics": {
+    "dev": {
+      "description": "Schematics Development",
+      "factory": "./dev",
+      "schema": "./dev/schema.json",
+      "hidden": true
+    },
     "license": {
       "description": "MIT License",
       "factory": "./license"
+    },
+    "ng-crud-module": {
+      "description": "Crud module for Angular apps",
+      "factory": "./ng-crud-module",
+      "schema": "./ng-crud-module/schema.json"
+    },
+    "ng-ui-module": {
+      "description": "UI Module for Angular apps",
+      "factory": "./ng-ui-module"
     },
     "prettier": {
       "description": "My custom prettier config",

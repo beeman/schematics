@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "id": "ng-ui-module",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Module name"
+    }
+  },
+  "required": [
+    "name"
+  ]
+}
