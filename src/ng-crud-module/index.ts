@@ -39,7 +39,7 @@ const createRecipe = (options: any) => {
         collection,
         schematicName: 'component',
         options: {
-          name: `${name}/containers/${name}-form`,
+          name: `${name}/components/${name}-form`,
           inlineStyle,
           inlineTemplate,
           spec,
@@ -49,9 +49,17 @@ const createRecipe = (options: any) => {
         collection,
         schematicName: 'component',
         options: {
-          name: `${name}/containers/${name}-item`,
+          name: `${name}/components/${name}-item`,
           inlineStyle,
           inlineTemplate,
+          spec,
+        },
+      },
+      {
+        collection,
+        schematicName: 'service',
+        options: {
+          name: `${name}/services/${name}`,
           spec,
         },
       },
