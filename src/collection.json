@@ -25,6 +25,11 @@
       "description": "UI Module for Angular apps",
       "factory": "./ng-ui-module"
     },
+    "nx-nest": {
+      "description": "Create a NEST Api in an NX Workspace",
+      "factory": "./nx-nest",
+      "schema": "./dev/schema.json"
+    },
     "prettier": {
       "description": "My custom prettier config",
       "factory": "./prettier"

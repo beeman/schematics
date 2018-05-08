@@ -1,0 +1,10 @@
+{
+  "watch": [
+    "apps/<%= name %>/src"
+  ],
+  "ext": "ts",
+  "ignore": [
+    "apps/<%= name %>/src/**/*.spec.ts"
+  ],
+  "exec": "ts-node -P tsconfig.<%= name %>.json -r tsconfig-paths/register apps/<%= name %>/src/main.ts"
+}

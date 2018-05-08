@@ -8,7 +8,7 @@ export interface Dep {
   version: string
 }
 
-export function updatePackageJson(dependencies: Dep[]): any {
+export function updatePackageJsonDeps(dependencies: Dep[]): any {
   return updateJsonInTree('/package.json', packageJson => {
     if (!packageJson.dependencies) {
       packageJson.dependencies = {}
@@ -16,6 +16,20 @@ export function updatePackageJson(dependencies: Dep[]): any {
     dependencies.forEach(dep => {
       if (!packageJson.dependencies[ dep.package ]) {
         packageJson.dependencies[ dep.package ] = dep.version
+      }
+    })
+    return packageJson
+  })
+}
+
+export function updatePackageJsonDevDeps(dependencies: Dep[]): any {
+  return updateJsonInTree('/package.json', packageJson => {
+    if (!packageJson.devDependencies) {
+      packageJson.devDependencies = {}
+    }
+    dependencies.forEach(dep => {
+      if (!packageJson.devDependencies[ dep.package ]) {
+        packageJson.devDependencies[ dep.package ] = dep.version
       }
     })
     return packageJson
@@ -43,7 +57,7 @@ export const addDependencies = (host: any, context: any, dependencies: any[]): a
     branchAndMerge(
       chain([
         checkWorkspace(),
-        updatePackageJson(dependencies),
+        updatePackageJsonDeps(dependencies),
       ])
     ),
   ])(host, context)

@@ -63,6 +63,13 @@ const createRecipe = (options: any) => {
           spec,
         },
       },
+      {
+        collection,
+        schematicName: 'class',
+        options: {
+          name: `${name}/models/${name}`
+        },
+      },
     ],
   }
 }

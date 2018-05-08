@@ -10,7 +10,7 @@ import {
   url,
 } from '@angular-devkit/schematics'
 
-import { runNpmInstall, updatePackageJson } from '../utils'
+import { runNpmInstall, updatePackageJsonDeps } from '../utils'
 
 const dependencies = [
   { package: 'bootstrap', version: '4.1.1' },
@@ -41,7 +41,7 @@ export default function(options: any): Rule {
 
     return chain([
       branchAndMerge(
-        updatePackageJson(dependencies),
+        updatePackageJsonDeps(dependencies),
       ),
       branchAndMerge(
         chain([mergeWith(templateSource)]),

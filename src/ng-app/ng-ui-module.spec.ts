@@ -6,8 +6,8 @@ const collectionPath = path.join(__dirname, '../collection.json');
 
 describe('license', () => {
   it('add license file', () => {
-    const runner = new SchematicTestRunner('ng-ui-module', collectionPath);
-    const tree = runner.runSchematic('ng-ui-module', {}, Tree.empty());
+    const runner = new SchematicTestRunner('ng-app', collectionPath);
+    const tree = runner.runSchematic('ng-app', {}, Tree.empty());
     expect(tree.files).toEqual([
       '/components/footer/footer.component.ts',
       '/components/header/header.component.ts',
