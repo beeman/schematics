@@ -28,6 +28,11 @@
     "prettier": {
       "description": "My custom prettier config",
       "factory": "./prettier"
+    },
+    "version-ts": {
+      "description": "Store git info in a file",
+      "factory": "./version-ts",
+      "schema": "./version-ts/schema.json"
     }
   }
 }
